@@ -13,7 +13,6 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center;
     border-radius: 10px;
 
 }
@@ -26,4 +25,19 @@
 
     color: white;
     text-align: right;
+}
+
+#container-thumb{
+    height: 450px;
+}
+
+.thumb{
+    height: 90px;
+}
+
+#container-thumb img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
