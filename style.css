@@ -1,6 +1,12 @@
 .slide {
     height: 450px;
+    width: 750px;
     position: relative;
+    display: none;
+}
+
+.slide.active {
+    display: block;
 }
 
 .slide img{
@@ -8,6 +14,8 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 10px;
+
 }
 
 .caption {
