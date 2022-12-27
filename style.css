@@ -41,3 +41,30 @@
     object-fit: cover;
     border-radius: 10px;
 }
+
+#container-thumb {
+    position: relative;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: 0 0 5px white;
+    cursor: pointer;
+}
+
+.up {
+    position: absolute;
+
+    top: 5px;
+    right: 50%;
+    transform: translate(50%);
+}
+
+.down {
+    position: absolute;
+
+    bottom: 5px;
+    right: 50%;
+    transform: translate(50%);
+}
