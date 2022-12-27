@@ -45,14 +45,10 @@ const data = [
 ];
 
 // Seleziono elementi dal DOM
-
 const containerSlide = document.getElementById('container-slide');
 const containerThumb = document.getElementById('container-thumb');
-const arrowUp = document.getElementById('arrow-up');
-const arrowDown = document.getElementById('arrow-down');
 
 // Inserisco immagini nel Container Slide
-
 let imgSlide = '';
 
 for (i = 0; i < data.length; i ++) {
@@ -73,7 +69,6 @@ for (i = 0; i < data.length; i ++) {
 containerSlide.innerHTML = imgSlide;
 
 // Inserisco immagini nel Container Thumb
-
 let imgThumb = '';
 
 for (i = 0; i < data.length; i ++) {
@@ -86,5 +81,60 @@ for (i = 0; i < data.length; i ++) {
   `
 }
 
-containerThumb.innerHTML = imgThumb;
+containerThumb.innerHTML = imgThumb +
+`
+<i id="arrow-up" class="bi bi-arrow-up-square-fill arrow up"></i>
+<i id="arrow-down" class="bi bi-arrow-down-square-fill arrow down"></i>
+`;
+
+const arrowUp = document.getElementById('arrow-up');
+const arrowDown = document.getElementById('arrow-down');
+
+//  Recupero TUTTE le Slide e imposto active alla i=0
+
+const slide = document.querySelectorAll('.slide');
+let currentActiveIndex = 0;
+slide[currentActiveIndex].classList.add('active');
+
+
+
+arrowDown.addEventListener('click', function() {
+
+  console.log(currentActiveIndex);
+  // Rimuovo la classe alla slide attiva in questo momento
+  slide[currentActiveIndex].classList.remove('active');
+
+  // Incremento l'indice per passare alla slide successiva
+  currentActiveIndex++;
+
+  // Se le immagini sono finite, però, porto l'indice a 0
+  if (currentActiveIndex === data.length) {
+    currentActiveIndex = 0;
+  }
+    
+  // e aggiungo la classe active
+  slide[currentActiveIndex].classList.add('active');
+
+});
+
+
+
+arrowUp.addEventListener('click', function() {
+
+  console.log(currentActiveIndex);
+  // Rimuovo la classe alla slide attiva in questo momento
+  slide[currentActiveIndex].classList.remove('active');
+
+  // Incremento l'indice per passare alla slide successiva
+  currentActiveIndex--;
+
+  // Se le immagini sono finite, però, porto l'indice a 0
+  if (currentActiveIndex < 0) {
+    currentActiveIndex = slide.length -1;
+  }
+
+  // e aggiungo la classe active
+  slide[currentActiveIndex].classList.add('active');
+    
+});
 
