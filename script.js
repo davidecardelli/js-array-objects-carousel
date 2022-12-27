@@ -93,8 +93,11 @@ const arrowDown = document.getElementById('arrow-down');
 //  Recupero TUTTE le Slide e imposto active alla i=0
 
 const slide = document.querySelectorAll('.slide');
+const thumb = document.querySelectorAll('.thumb');
 let currentActiveIndex = 0;
 slide[currentActiveIndex].classList.add('active');
+thumb[currentActiveIndex].classList.add('selected');
+
 
 
 
@@ -103,6 +106,8 @@ arrowDown.addEventListener('click', function() {
   console.log(currentActiveIndex);
   // Rimuovo la classe alla slide attiva in questo momento
   slide[currentActiveIndex].classList.remove('active');
+  thumb[currentActiveIndex].classList.remove('selected');
+
 
   // Incremento l'indice per passare alla slide successiva
   currentActiveIndex++;
@@ -114,6 +119,7 @@ arrowDown.addEventListener('click', function() {
     
   // e aggiungo la classe active
   slide[currentActiveIndex].classList.add('active');
+  thumb[currentActiveIndex].classList.add('selected');
 
 });
 
@@ -124,6 +130,7 @@ arrowUp.addEventListener('click', function() {
   console.log(currentActiveIndex);
   // Rimuovo la classe alla slide attiva in questo momento
   slide[currentActiveIndex].classList.remove('active');
+  thumb[currentActiveIndex].classList.remove('selected');
 
   // Incremento l'indice per passare alla slide successiva
   currentActiveIndex--;
@@ -135,6 +142,7 @@ arrowUp.addEventListener('click', function() {
 
   // e aggiungo la classe active
   slide[currentActiveIndex].classList.add('active');
+  thumb[currentActiveIndex].classList.add('selected');
     
 });
 
