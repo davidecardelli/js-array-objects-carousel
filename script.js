@@ -44,3 +44,47 @@ const data = [
   }
 ];
 
+// Seleziono elementi dal DOM
+
+const containerSlide = document.getElementById('container-slide');
+const containerThumb = document.getElementById('container-thumb');
+const arrowUp = document.getElementById('arrow-up');
+const arrowDown = document.getElementById('arrow-down');
+
+// Inserisco immagini nel Container Slide
+
+let imgSlide = '';
+
+for (i = 0; i < data.length; i ++) {
+  
+  imgSlide += 
+  `
+  <div class="slide">
+      <img src="${data[i].image}" alt="immagine-${i}">
+      <div class="caption">
+          <h2>${data[i].title}</h2>  
+          <p>${data[i].text}</p>
+      </div>
+  </div>
+
+  `
+}
+
+containerSlide.innerHTML = imgSlide;
+
+// Inserisco immagini nel Container Thumb
+
+let imgThumb = '';
+
+for (i = 0; i < data.length; i ++) {
+  
+  imgThumb += 
+  `
+  <div class="thumb">
+    <img src="${data[i].image}" alt="immagine-${i}">
+  </div>
+  `
+}
+
+containerThumb.innerHTML = imgThumb;
+
